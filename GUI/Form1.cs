@@ -20,8 +20,29 @@ namespace GUI
 
         Point x1, x2, y1, y2;
         
-        private void button1_Click(object sender, EventArgs e)
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
+            Graphics g = e.Graphics;
+            Pen p = new Pen(Color.Black, 2);
+            g.DrawLine(p, x1, y1);
+            g.DrawLine(p, x2, y2);
+            g.Dispose();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            textBox1.Text = Convert.ToString(random.NextDouble() * 10);
+            textBox2.Text = Convert.ToString(random.NextDouble() * 10);
+            textBox3.Text = Convert.ToString(random.NextDouble() * 10);
+            textBox4.Text = Convert.ToString(random.NextDouble() * 10);
+            textBox5.Text = Convert.ToString(random.NextDouble() * 10);
+            textBox6.Text = Convert.ToString(random.NextDouble() * 10);
+            textBox7.Text = Convert.ToString(random.NextDouble() * 10);
+            textBox8.Text = Convert.ToString(random.NextDouble() * 10);
+           
             Tuple<double, double> a = new Tuple<double, double>
                             (Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text));
 
@@ -39,35 +60,6 @@ namespace GUI
             x2 = new Point(Convert.ToInt32(c.Item1) * 30, Convert.ToInt32(c.Item2) * 30);
             y2 = new Point(Convert.ToInt32(d.Item1) * 30, Convert.ToInt32(d.Item2) * 30);
             panel1.Refresh();
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics g = e.Graphics;
-            Pen p = new Pen(Color.Black, 2);
-            g.DrawLine(p, x1, y1);
-            g.DrawLine(p, x2, y2);
-            g.Dispose();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Random random = new Random();
-            textBox1.Text = Convert.ToString(random.NextDouble() * 10);
-            textBox2.Text = Convert.ToString(random.NextDouble() * 10);
-            textBox3.Text = Convert.ToString(random.NextDouble() * 10);
-            textBox4.Text = Convert.ToString(random.NextDouble() * 10);
-            textBox5.Text = Convert.ToString(random.NextDouble() * 10);
-            textBox6.Text = Convert.ToString(random.NextDouble() * 10);
-            textBox7.Text = Convert.ToString(random.NextDouble() * 10);
-            textBox8.Text = Convert.ToString(random.NextDouble() * 10);
-            button1.PerformClick();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

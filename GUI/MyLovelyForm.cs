@@ -11,10 +11,13 @@ using OurLib;
 
 namespace GUI
 {
-    public partial class Form1 : Form
+    public partial class MyLovelyForm : Form
     {
-        public Form1()
+        public MyLovelyForm()
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             InitializeComponent();
         }
 

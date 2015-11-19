@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class Form1
+    partial class MyLovelyForm
     {
         /// <summary>
         /// Требуется переменная конструктора.
